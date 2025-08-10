@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex justify-content-center">
+        <form method="POST" class="border p-4 m-5">{% csrf_token %}
+            <div class="mb-4 col">
+                <input name='username' type="text" class="form-control" placeholder="Username" Required>
+            </div>
+            <div class="mb-4">
+                <input name="password" type="password" class="form-control" placeholder="Password" Required>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn bg-primary"> Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

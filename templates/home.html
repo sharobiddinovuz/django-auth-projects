@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <p>Hello, {{ request.user }}! </p>
+    {% else %}
+        <p>Please, registration site! <a href="{% url 'accounts:register' %}">Register</a></p>
+    {% endif %}
+{% endblock %}
