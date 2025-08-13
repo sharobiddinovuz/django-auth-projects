@@ -15,7 +15,9 @@
             <ul class="nav justify-content-end">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:logout'%}">Logout</a>
+                        <form method="POST" action="{% url "accounts:logout"%}">{% csrf_token %}
+                            <button type="submit">logout </button>
+                        </form>
                     </li>
                 {% else %}
                     <li class="nav-item">
